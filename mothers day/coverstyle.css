@@ -1,0 +1,287 @@
+﻿
+@font-face {
+    font-family: 'astudio'; /* Name your font */
+    src: url('Astral Studio.ttf') format('truetype'), /* Path to your font file */
+    url('Astral Studio.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'bsabang'; /* Name your font */
+    src: url('Bakpia Sabang.ttf') format('truetype'), /* Path to your font file */
+    url('Bakpia Sabang.ttf') format('truetype');
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('pink bg.jpg');
+    background-size: 200% 100%;
+}
+
+.bg {
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s ease, opacity 0.5s ease;
+}
+
+    .bg img {
+        max-width: 50%;
+        max-height: 50%;
+        
+    }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+}
+
+.heart {
+    position: relative;
+    width: 170px;
+    height: 130px;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    transform: rotate(-45deg);
+    border-radius: 20px;
+    transition: transform 0.3s ease, opacity 0.5s ease;
+}
+
+    .heart p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        font-size: 50px;
+        font-family: 'astudio', sans-serif;
+        color: red; /* Color of the text */
+        transition: transform 0.3s ease, opacity 0.5s ease;
+    }
+
+
+.rose-left {
+    position: fixed;
+    top: 0;
+    left: 0; /* Align to the left edge of the screen */
+    transform: translate(0, -50%); /* Adjust vertical position to center */
+    display: none;
+    width: 20%;
+    height: 100%;
+}
+
+.rose-right {
+    position: fixed;
+    top: 0;
+    right: 0; /* Align to the right edge of the screen */
+    transform: translate(0, -50%); /* Adjust vertical position to center */
+    display: none;
+    width: 20%;
+    height: 100%;
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.mother-text {
+    position: fixed;
+    top: -100px; /* Initially positioned off the top of the screen */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 100px;
+    font-family: 'astudio', sans-serif;
+    font-weight: bold;
+    color: #db6e80;
+    opacity: 0; /* Initially transparent */
+    text-align: center;
+}
+
+@keyframes slideDown {
+    0% {
+        top: -100px; /* Start off the top of the screen */
+        opacity: 0; /* Start transparent */
+    }
+
+    100% {
+        top: 20px;
+        margin-top: 0;
+        opacity: 1; 
+    }
+}
+
+.new-button {
+    position: fixed;
+    top: 50%;
+    right: 300px; /* Adjust position from the right */
+    transform: translateY(-50%);
+    padding: 10px 20px; /* Adjust size of the button */
+    font-size: 30px;
+    font-family: 'astudio', sans-serif;
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Apply transition to the opacity property */
+}
+
+    .new-button:hover {
+        background-color: #ff1493; /* Change background color on hover */
+    }
+
+.back-button {
+    position: fixed;
+    top: 95%;
+    right: 250px; /* Adjust position from the right */
+    transform: translateY(-50%);
+    padding: 10px 20px; /* Adjust size of the button */
+    font-size: 30px;
+    font-family: 'astudio', sans-serif;
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Apply transition to the opacity property */
+}
+
+    .back-button:hover {
+        background-color: #ff1493; /* Change background color on hover */
+    }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.message-text {
+    font-family: 'bsabang', sans-serif;
+    font-size: 27px;
+    color: #db6e80;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: fixed;
+    padding: 10px 10px;
+    right: 15%;
+    left: 15%;
+    top: 20%;
+    text-align: left;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+.signature {
+    text-align: right;
+    display: block;
+}
+
+.portrait {
+    width: 28%;
+    height: auto;
+    position: fixed;
+    right: 37%;
+    top: 21%;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    /* Adjust size of heart image */
+    .heart {
+        width: 130px;
+        height: 90px;
+    }
+
+        .heart p {
+            font-size: 35px;
+        }
+
+    .rose-left,
+    .rose-right {
+        width: auto; /* Set the width to auto to maintain the original size */
+        height: 100%; /* Set the height to auto to maintain the original aspect ratio */
+        max-width: 20%; /* Set the maximum width to 50% of the viewport width */
+        position: fixed; /* Ensure the roses are fixed to the viewport */
+        top: 0; /* Position the roses at the top of the viewport */
+        
+    }
+
+    .rose-left {
+        left: 0; /* Position the left rose at the left edge of the viewport */
+    }
+
+    .rose-right {
+        right: 0; /* Position the right rose at the right edge of the viewport */
+    }
+
+    .mother-text {
+        font-size: 55px;
+        text-align: center;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .new-button {
+        right: 37%;
+        top: 94%;
+    }
+
+    .message-text {
+        font-size: 17px;
+    }
+
+    .back-button {
+        right: 20%;
+        font-size: 20px;
+    }
+
+    .portrait {
+        width: 65%;
+        height: auto;
+        right: 17%;
+    }
+}
